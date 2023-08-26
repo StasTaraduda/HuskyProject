@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Вет-клініка "Хаска"</title>
+  <link rel="stylesheet" href="{%static 'CSS/style.css'%}">
+</head>
+
+<body>
+<div class="navbar">
+  <div class="navbar-content"> Вас вітає ветеринарна клініка "Хаска"</div>
+  <ul id="navbar">
+    <a href="Lub1.html"><img class="img" src ="{%static 'Drawings/logotype.jpg'%}"></a>
+    <li><a href="{%url 'index' %}">Головна</a></li>
+    <li><a href="#">Інформація</a>
+      <ul>
+        <li><a href="#">Графік роботи</a></li>
+        <li><a href="#">Ціни</a></li>
+        <li><a href="#">Розташування</a></li>
+      </ul>
+    </li>
+    <li><a href="{%url 'newssite' %}">Новини</a></li>
+    <li><a href="#">Контакти</a>
+      <ul>
+        <li><a href="#">Адреса</a></li>
+        <li><a href="#">Телефон</a></li>
+        <li><a href="#">Пошта</a></li>
+      </ul>
+    </li>
+    <li><a class= "news">Запис тваринки</a></li>
+    <li><a href="{%url 'discussion' %}">Обговорення різних проблем</a></li>
+  </ul>
+</div>
+  {% if err1%}
+  <br>
+  <p class="errors"> {{err1}}!</p>
+  <br>
+  {% endif %}
+  {% if err2%}
+  <br>
+  <p class="errors"> {{err2}}!</p>
+  <br>
+  {% endif %}
+  {% if err3%}
+  <br>
+  <p class="errors"> {{err3}}!</p>
+  <br>
+  {% endif %}
+  {% if err4%}
+  <br>
+  <p class="errors"> {{err4}}!</p>
+  <br>
+  {% endif %}
+  {% if err5%}
+  <br>
+  <p class="errors"> {{err5}}!</p>
+  <br>
+  {% endif %}
+  {% if err6%}
+  <br>
+  <p class="errors"> {{err6}}!</p>
+  <br>
+  {% endif %}
+  {% if err7%}
+  <br>
+  <p class="errors"> {{err7}}!</p>
+  <br>
+  {% endif %}
+  {% if err8%}
+  <br>
+  <p class="errors"> {{err8}}!</p>
+  <br>
+  {% endif %}
+  {% if err9%}
+  <br>
+  <p class="errors"> {{err9}}!</p>
+  <br>
+  {% endif %}
+  {% if err10%}
+  <br>
+  <p class="errors"> {{err10}}!</p>
+  <br>
+  {% endif %}
+<h1>Запис тваринки</h1>
+<div id="content">
+  <form class="form" method="post" action="{%url 'record'%}">
+    <h2>Запис тваринки на прийом</h2>
+    <label>Кличка*</label>
+    <input type="text" name="ClientPetNickname" placeholder="Кличка"><br>
+    <label>Вік тваринки*</label>
+    <input type="number" name="ClientPetAge" placeholder="Писати у роках"><br>
+    <label> Стать тваринки*</label>
+    <select name="ClientPetSex">
+      <option value=""></option>
+      <option value="Чоловічий">Чоловічий</option>
+      <option value="Жіночий">Жіночий</option>
+    </select><br>
+    <label>Тип тваринки*</label>
+    <input type="text" name="AnimalKindOfAnimal" placeholder="Тип тваринки"><br>
+<!--    <select name="AnimalKindOfAnimal">-->
+<!--      <option value=""></option>-->
+<!--      {% for anml in animals %}-->
+<!--        <option value="{{anml.id}}">{{anml.kindOfAnimal}}</option>-->
+<!--      {% endfor %}-->
+<!--    </select><br>-->
+    <label>Порода тваринки*</label>
+    <input type="text" name="BreedOfAnimalName" placeholder="Порода тваринки"><br>
+    <label>Дата прийому*</label>
+    <input type="date" name="TimetableDateOfAdmission" id="date"><br>
+    <label>Ім'я власника*</label>
+    <input type="text" name = "ClientFirstName" value="{{ClientFirstName}}" id="human" placeholder="Ім'я"><br>
+    <label>Прізвище власника*</label>
+    <input type="text" name="ClientLastName" value="{{ClientLastName}}" id="surname" placeholder="Прізвище"><br>
+    <label>Адреса електроної почти*</label>
+    <input type="email" name="ClientEmail" value="{{ClientEmail}}" id="email" placeholder="Почта"><br>
+    <label>Номер телефону*</label>
+    <input type="tel" name = "ClientPhoneNumber" value="{{ClientPhoneNumber}}" id = "number" placeholder="+380963411178"><br>
+    <input type="submit" id="save" value="Надіслати">
+  </form>
+
+      {% if clients%}
+        <h1> Створені клієнти</h1>
+  <ul>
+        {%for cln in clients%}
+            <li>Ідентифікатор клієнта: {{cln.id}}  Ім'я клієнта: {{cln.first_name}} Прізвище клієнта: {{cln.last_name}}
+              Електрона почта клієнта: {{cln.email}} Номер телефону клієнта: {{cln.phone_number}}</li>
+        {% endfor %}
+  </ul>
+      {% endif %}
+
+<div class="search">Бажаєте дізнатися скільки людей вже записано на прийом сьогодні?</div>
+<button id="display">Отримати інформацію</button>
+<div id="clients"></div></div>
+<script src="{%static 'JS/search.js'%}"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Вет-клініка "Хаска опитування"</title>
+  <link rel="stylesheet" href="{%static 'CSS/style.css'%}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-content"> Вас вітає ветеринарна клініка "Хаска"</div>
+        <ul id="navbar">
+          <a href="Lub1.html"><img class="img" src ="{%static 'Drawings/logotype.jpg'%}"></a>
+          <li><a href="{%url 'index' %}">Головна</a></li>
+          <li><a href="#">Інформація</a>
+            <ul>
+              <li><a href="#">Графік роботи</a></li>
+              <li><a href="#">Ціни</a></li>
+              <li><a href="#">Розташування</a></li>
+            </ul>
+          </li>
+          <li><a href="{%url 'newssite' %}">Новини</a></li>
+          <li><a href="#">Контакти</a>
+            <ul>
+              <li><a href="#">Адреса</a></li>
+              <li><a href="#">Телефон</a></li>
+              <li><a href="#">Пошта</a></li>
+            </ul>
+          </li>
+          <li><a href = "{%url 'recording' %}">Запис тваринки</a></li>
+          <li><a href="{%url 'discussion' %}">Обговорення різних проблем</a></li>
+        </ul>
+    </div>
+    <h1 id= "title">Опитування клієнтів вет-клініки Хаска</h1>
+    <div class="test">
+        <div class="questions">
+            <div class="question">Чи задоволені ви професіоналізмом лікарів?</div>
+            <div class="question">Чи влаштовує вас дієвість наданої допомоги?</div>
+            <div class="question">Чи задоволені ви дотриманням санітарних норм?</div>
+            <div class="question">Чи задоволені ви якістю надання різного типу послуг?</div>
+        </div>
+        <div class="answer">
+            <input type="radio" value="0" id="answer_0" name="0">0<br>
+            <input type="radio" value="1" id="answer_1" name="0">1<br>
+            <input type="radio" value="2" id="answer_2" name="0" checked>2<br>
+            <input type="radio" value="3" id="answer_3" name="0">3<br>
+            <input type="radio" value="4" id="answer_4" name="0">4<br>
+            <input type="radio" value="5" id="answer_5" name="0">5<br>
+            
+        </div>
+        <button id="next_question">Продовжити</button>
+        <div class="result"></div>
+        <a href="./Lub1.html" class="exit">Повернутися на головну</a>
+
+    </div>
+
+    <!-- <div class="result">
+        <div class="question"></div>
+        <div class="question"></div>
+        <div class="question"></div>
+        <div class="question"></div>
+    </div> -->
+    <script src="{%static 'JS/polls.js'%}"></script>
+</body>
+</html>

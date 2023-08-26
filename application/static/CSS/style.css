@@ -1,0 +1,308 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#navbar ul{
+    display:none;
+    background-color: #1f7985;
+    position: absolute;
+    top: 100%;
+}
+#navbar li:hover ul { display: block; }
+#navbar, #navbar ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+#navbar {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    /* height: 65px; */
+    min-width: 470px;
+    flex-wrap: wrap;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.navbar{
+    position: fixed;
+    background-color: #7dbbc2f6;
+    width: 100%;
+}
+.navbar-content{
+    text-align: center;
+    background-color: #7dbbc2f6;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    color: #e7f0ef;
+}
+#navbar li {
+    /* float: left; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Без обтекания 1-ый уровень меню не вытягивается в горизонтальную линию,
+    а без позиционирования вложенное меню не отображается при наведении курсора на верхнее меню*/
+    position: relative;
+    height: 100%;
+}
+#navbar li a{
+    display: block;
+    padding: 6px;
+    width: 200px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 4px 10px rgb(0, 0, 0);
+    color: #e7f0ef;
+    text-decoration: none;
+    text-align: center;
+}
+#navbar ul li { float: none; }
+#navbar li:hover { background-color: #a863b6; }
+#navbar ul li:hover { background-color: #666; }
+::selection{
+    background: #1f7985;
+    color: rgb(255, 127, 182);
+}
+
+body{
+    background: #0fb2946e;
+}
+
+h1{
+    padding-top: 130px;
+    padding-bottom: 20px;
+    text-align: center;
+    border-bottom: 3px solid #d86a09;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #e7f0ef;
+}
+
+.main_title{
+    padding-top: 130px;
+    padding-bottom: 20px;
+    padding-left: 200px;
+    text-align: center;
+    border-bottom: 3px solid #d86a09;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #e7f0ef;
+}
+.news{
+    background: #1fe944;
+}
+.img{
+    display: flex;
+    height: 65px;
+    width: 150px;
+    padding: 4px;
+}
+.img_content{
+    flex: 1 1 auto;
+    height: 30%;
+    width: 30%;
+}
+.content_first_site{
+    display: flex;
+    padding-left: 15px;
+    padding-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+.h2_news{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 10px;
+    color: #e7f0ef;
+}
+.news_img{
+    display: flex;
+    justify-content: space-around;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+}
+.news_infomation{
+    margin-top: 15px;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.inf_1{
+    margin-top: 30px;
+    border: 2px solid rgb(0, 255, 81);
+}
+.inf_2{
+    margin-top: 30px;
+    border: 2px solid rgb(0, 255, 81);
+}
+.inf_3{
+    margin-top: 30px;
+    border: 2px solid rgb(0, 255, 81);
+}
+.inf_4{
+    margin-top: 30px;
+    border: 2px solid rgb(0, 255, 81);
+}
+.form{
+    border: 2px solid #1fe944;
+    padding-top: 5px;
+    max-width: 500px;
+    background:#7dbbc2f6;
+    border-radius: 10px;
+    box-shadow:  #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #e7f0ef;
+    margin:auto;
+}
+
+#save{
+    font-size: 20px;
+    color: #e7f0ef;
+    background: #66b0de;
+    margin-top: 10px;
+
+}
+h2{
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.content{
+    display: flex;
+    
+}
+
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    z-index: 1;
+}
+.modal_inner{
+    border: 2px solid black;
+}
+.modal_close{
+    display: flex;
+    justify-content: flex-end;
+    border: 2px solid rgb(0, 255, 81);
+    background: rgb(0, 255, 149);
+    font-size: 20px;
+    color: rgb(0, 55, 255);
+}
+.form_block{
+    display: flex;
+    justify-content:space-between;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.modal_content{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000000;
+    background-color: #dce91f90;
+}
+
+input:invalid:hover, select:invalid:hover{
+    border-color: #ff0000;
+}
+
+.poll{
+    margin-right: 20px;
+    float: right;
+    max-width: 260px;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #a863b6;
+    border: 3px solid #1fe944;
+    font-size: 17px;
+    margin-top: 138px;
+
+}
+
+.test{
+    border: 2px solid #1fe944;
+    padding-top: 5px;
+    max-width: 500px;
+    background:#7dbbc2f6;
+    border-radius: 10px;
+    box-shadow:  #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #e7f0ef;
+    margin:auto;
+}
+#title{
+    padding-top: 140px;
+    padding-bottom: 20px;
+    text-align: center;
+    border-bottom: 3px solid #d86a09;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #e7f0ef;
+}
+.exit{
+    display: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #10659a;
+
+}
+
+.text{
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.paragraphs{
+    border: 3px solid #1fe944;
+    margin-top: 20px;
+}
+
+.errors{
+    margin: 150px 0px 0 0;
+    font-size: 15px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+    z-index: 4;
+}
+.user{
+    float:left;
+    max-width: 260px;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #a863b6;
+    border: 3px solid #1fe944;
+    font-size: 17px;
+    margin-top: 138px;
+}
+.search{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    color: #b300ff;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+#display{
+    font-size: large;
+    border-radius: 10px;
+    background: rgba(2, 128, 83, 0.96);
+    color: #e7f0ef;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+#display:hover{
+    background: rgba(207, 253, 2, 0.96);
+}
+#clients{
+    margin-top: 50px;
+    font-size: 20px;
+
+}
+h3{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #e7f0ef;
+    border-bottom: 2px solid #d86a09;
+    font-size: 25px;
+
+}
